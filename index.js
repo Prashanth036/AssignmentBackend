@@ -17,7 +17,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: 'https://prashanth036.github.io/techAssistFrontEnd/', // Replace with your React app's URL
+  origin: 'https://prashanth036.github.io', // Replace with your React app's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // Allow credentials (cookies, authorization headers)
 };
