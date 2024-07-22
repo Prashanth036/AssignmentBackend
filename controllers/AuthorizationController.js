@@ -47,7 +47,7 @@ const Login = async (req, res) => {
     res.status(200).json({ accessToken });
   } catch (err) {
     console.error("Login error:", err);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json(err);
   }
 }
 
@@ -73,7 +73,7 @@ const CreateUser = async (req, res) => {
     res.status(200).json({ accessToken });
   } catch (err) {
     console.error("CreateUser error:", err);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json(err);
   }
 }
 

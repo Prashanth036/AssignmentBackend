@@ -16,10 +16,22 @@ const Sequelize = require('sequelize');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// const corsOptions = {
+//   origin: 'http://localhost:5173/' ,
+//   //  'https://prashanth036.github.io', // Replace with your React app's URL
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true, // Allow credentials (cookies, authorization headers),
+//   allowedHeaders: ['Content-Type', 'Authorization'] // Allow necessary headers
+
+// };
+
 const corsOptions = {
-  origin: 'https://prashanth036.github.io', // Replace with your React app's URL
+  origin: 
+  "https://prashanth036.github.io",
+  // 'http://localhost:5173', // Corrected URL without trailing slash
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // Allow credentials (cookies, authorization headers)
+  allowedHeaders: ['Content-Type', 'Authorization'] // Allow necessary headers
 };
 
 app.use(express.json());
