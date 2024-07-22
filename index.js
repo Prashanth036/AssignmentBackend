@@ -27,8 +27,7 @@ const port = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: 
-  "https://prashanth036.github.io",
-  // 'http://localhost:5173', // Corrected URL without trailing slash
+  "https://techassist-1ff8b.firebaseapp.com",// Corrected URL without trailing slash
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // Allow credentials (cookies, authorization headers)
   allowedHeaders: ['Content-Type', 'Authorization'] // Allow necessary headers
@@ -46,7 +45,7 @@ const sequelize = new Sequelize({
   "storage": "./database.sqlite"
 })
 sequelize.authenticate().then(()=>{
-sequelize.sync({ force: true })
+sequelize.sync()
   .then(() => {
     console.log('Connection has been established successfully.');
     return app.listen(port, () => {
@@ -61,7 +60,7 @@ sequelize.sync({ force: true })
 
 app.post('/login', Login);
 app.post('/register', CreateUser);
-app.get('/user', [isAuthenticatedMiddleware], getUser);
+app.get('/user', isAuthenticatedMiddleware, getUser);
 app.get('/users', isAuthenticatedMiddleware, getUsers);
 app.put('/user/:userId', updateUser);
 
