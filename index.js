@@ -26,8 +26,7 @@ const port = process.env.PORT || 3000;
 // };
 
 const corsOptions = {
-  origin: 
-  "https://techassist-1ff8b.firebaseapp.com",// Corrected URL without trailing slash
+  origin: process.env.FrontEndUrl,// Corrected URL without trailing slash
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // Allow credentials (cookies, authorization headers)
   allowedHeaders: ['Content-Type', 'Authorization'] // Allow necessary headers
